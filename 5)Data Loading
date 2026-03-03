@@ -1,0 +1,11 @@
+COPY INTO facebook_ads_raw
+FROM @marketing_stage/01_facebook_ads.csv
+FILE_FORMAT = (TYPE = CSV SKIP_HEADER = 1);
+
+COPY INTO google_ads_raw
+FROM @marketing_stage/02_google_ads.csv
+FILE_FORMAT = (TYPE = CSV SKIP_HEADER = 1);
+
+COPY INTO tiktok_ads_raw
+FROM @marketing_stage/03_tiktok_ads.csv
+FILE_FORMAT = (TYPE = CSV SKIP_HEADER = 1);
