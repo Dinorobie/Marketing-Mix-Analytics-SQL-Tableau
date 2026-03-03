@@ -1,0 +1,5 @@
+CREATE DATABASE marketing_db;
+USE DATABASE marketing_db;
+
+CREATE SCHEMA raw;
+USE SCHEMA raw;
