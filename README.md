@@ -1,4 +1,4 @@
-Dashboard: https://us-east-1.online.tableau.com/t/robertosepulvedasantos-aba5ea92e0/views/mkt_asigment/Resume
+Dashboard: https://us-east-1.online.tableau.com/t/robertosepulvedasantos-aba5ea92e0/views/mkt_asigment/Dashboard1
 
 
 📊 Marketing Mix & Campaign Performance Dashboard
