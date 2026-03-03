@@ -1,0 +1,55 @@
+WITH unified AS (
+
+    SELECT date, 'Facebook' AS channel, impressions, clicks, spend
+    FROM facebook_ads_raw
+
+    UNION ALL
+
+    SELECT date, 'Google' AS channel, impressions, clicks, cost AS spend
+    FROM google_ads_raw
+
+    UNION ALL
+
+    SELECT date, 'TikTok' AS channel, impressions, clicks, cost AS spend
+    FROM tiktok_ads_raw
+),
+
+daily_channel AS (
+
+    SELECT
+        date,
+        channel,
+        SUM(spend) AS total_spend,
+        SUM(clicks) AS total_clicks,
+        SUM(impressions) AS total_impressions
+    FROM unified
+    GROUP BY date, channel
+)
+
+SELECT
+    date,
+    channel,
+    total_spend,
+    total_clicks,
+    total_impressions,
+
+    ROUND(
+        total_spend /
+        SUM(total_spend) OVER (PARTITION BY date),
+        4
+    ) AS spend_mix_pct,
+
+    ROUND(
+        total_clicks /
+        SUM(total_clicks) OVER (PARTITION BY date),
+        4
+    ) AS click_mix_pct,
+
+    ROUND(
+        total_impressions /
+        SUM(total_impressions) OVER (PARTITION BY date),
+        4
+    ) AS impression_mix_pct
+
+FROM daily_channel
+ORDER BY date, channel;
