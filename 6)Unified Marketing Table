@@ -1,0 +1,38 @@
+CREATE OR REPLACE TABLE marketing_unified AS
+
+SELECT
+    date,
+    campaign_id,
+    campaign_name,
+    impressions,
+    clicks,
+    spend,
+    conversions,
+    'Facebook' AS platform
+FROM facebook_ads_raw
+
+UNION ALL
+
+SELECT
+    date,
+    campaign_id,
+    campaign_name,
+    impressions,
+    clicks,
+    cost AS spend,
+    conversions,
+    'Google' AS platform
+FROM google_ads_raw
+
+UNION ALL
+
+SELECT
+    date,
+    campaign_id,
+    campaign_name,
+    impressions,
+    clicks,
+    cost AS spend,
+    conversions,
+    'TikTok' AS platform
+FROM tiktok_ads_raw;
