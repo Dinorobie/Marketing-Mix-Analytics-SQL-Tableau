@@ -1,0 +1,16 @@
+CREATE OR REPLACE TABLE google_ads_raw (
+    date DATE,
+    campaign_id STRING,
+    campaign_name STRING,
+    ad_group_id STRING,
+    ad_group_name STRING,
+    impressions NUMBER,
+    clicks NUMBER,
+    cost NUMBER,
+    conversions NUMBER,
+    conversion_value NUMBER,
+    ctr FLOAT,
+    avg_cpc FLOAT,
+    quality_score NUMBER,
+    search_impression_share FLOAT
+);

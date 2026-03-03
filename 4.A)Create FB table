@@ -1,0 +1,15 @@
+CREATE OR REPLACE TABLE facebook_ads_raw (
+    date DATE,
+    campaign_id STRING,
+    campaign_name STRING,
+    ad_set_id STRING,
+    ad_set_name STRING,
+    impressions NUMBER,
+    clicks NUMBER,
+    spend NUMBER,
+    conversions NUMBER,
+    video_views NUMBER,
+    engagement_rate FLOAT,
+    reach NUMBER,
+    frequency FLOAT
+);

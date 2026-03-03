@@ -1,0 +1,19 @@
+CREATE OR REPLACE TABLE tiktok_ads_raw (
+    date DATE,
+    campaign_id STRING,
+    campaign_name STRING,
+    adgroup_id STRING,
+    adgroup_name STRING,
+    impressions NUMBER,
+    clicks NUMBER,
+    cost NUMBER,
+    conversions NUMBER,
+    video_views NUMBER,
+    video_watch_25 NUMBER,
+    video_watch_50 NUMBER,
+    video_watch_75 NUMBER,
+    video_watch_100 NUMBER,
+    likes NUMBER,
+    shares NUMBER,
+    comments NUMBER
+);
